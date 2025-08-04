@@ -1,16 +1,22 @@
+// importing express and morgan
 const express = require('express'),
-      morgan = require('morgan'),
-      path = require('path');
+    morgan = require('morgan');
 
+// assigning express to variable 'app'
 const app = express();
 
-// Middleware library to log all requests
+// using morgan to log requests using morgan's 'common' format
 app.use(morgan('common'));
 
-// Serve static files from the 'public' folder
+// ensures that static files will be served from the public folder
 app.use(express.static('public'));
 
-// GET route for 'movies'
+// default endpoint that returns a message welcoming the user
+app.get('/', (req, res) => {
+    res.send('Welcome to my movie API!');
+});
+
+// movies endpoint that returns the json object 'topMovies' containing a list of 10 top movies
 app.get('/movies', (req, res) => {
     const topMovies = [
     { title: 'Titanic', year: '1997' },
@@ -24,21 +30,21 @@ app.get('/movies', (req, res) => {
     { title: 'The Good, the Bad and the Ugly', year: '1966'},
     { title: 'Inception', year: '2010'}
   ];
-    res.json({movies: topMovies});
-})
-
-// GET route for '/'
-app.get('/', (req, res) => {
-  res.send('This is my movie API!');
+  res.json(topMovies);
 });
 
-// Error handling middleware function
+// this is just a test error
+app.get('/test-error-sync', (req, res) => {
+  throw new Error('This is a synchronous test error!');
+});
+
+// error handling middleware function
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
 
-// Start the server on port 8080 
+// listening for requests
 app.listen(8080, () => {
   console.log('Your app is listening on port 8080.');
 });

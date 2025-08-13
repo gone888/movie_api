@@ -40,115 +40,168 @@
       </tr>
     </thead>
     <tbody>
-    <!-- GET /movies -->
+    <!-- GET data of all movies -->
     <tr>
       <td>Get a list of all movies</td>
       <td>/movies</td>
       <td>GET</td>
       <td>None</td>
       <td>None</td>
-      <td>A JSON object holding a list of all movies in the database</td>
+      <td>A JSON object holding a list of all movies in the database.</td>
     </tr>
-    <!-- GET /movies/:title -->
+    <!-- GET data of all users -->
     <tr>
-      <td>Get a movie by title</td>
+      <td>Get a list of all users</td>
+      <td>/users</td>
+      <td>GET</td>
+      <td>None</td>
+      <td>None</td>
+      <td>A JSON object holding a list of all users in the database.</td>
+    </tr>
+    <!-- GET data of a single movie by its title -->
+    <tr>
+      <td>Get data about a single movie by it's title</td>
       <td>/movies/{title}</td>
       <td>GET</td>
       <td>title</td>
       <td>None</td>
-      <td>A JSON object holding the data of the specified movie, containing its title, description, genre, director, imageURL, and if the movie was a feature film. Example:
+      <td>A JSON object holding the data of the specified movie, containing its title, description, genre, director, imageURL, and if the movie is featured. Example: </br>
         {</br>
-          "Title": "The Dark Knight",</br>
-          "Description": "When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness.",</br>
-          "Genre": </br>{
-            "Name": "Action",</br>
-            "Description": "In the context of film, 'Action' is a genre characterized by fast-paced, dynamic sequences of fights, chases, and explosions, often with a clear objective and time constraint."</br>
-          },</br>
-          "Director": {</br>
-            "Name": "Christopher Nolan",</br>
-            "Description": "Sir Christopher Edward Nolan (born 30 July 1970) is a British and American filmmaker. Known for his Hollywood blockbusters with structurally complex storytelling, he is considered a leading filmmaker of the 21st century. Nolan's films have earned over $6.6 billion worldwide, making him the seventh-highest-grossing film director. His accolades include two Academy Awards, a Golden Globe Award and two British Academy Film Awards. Nolan was appointed a Commander of the Order of the British Empire in 2019, and received a knighthood in 2024 for his contributions to film.",</br>
-            "Birth": 1970</br>
-          },</br>
-        "ImageURL": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRxsc3y8f6axKrxHKlFnRaVaByZd9GxgIxdvmurQxJtrby1y05lW1SG0mOnNpwTq90m_pAIjw",</br>
-        "Featured": true</br>
-        }
+          "Genre": { </br>
+            "Name": "Action", </br>
+            "Description": "The action genre in media, like movies, books, and video games, is characterized by fast-paced, physical conflict and exciting scenarios where protagonists overcome challenges through physical feats, often involving fights, chases, or battles against powerful antagonists." </br>
+            }, </br>
+          "Director": { </br>
+            "Name": "Christopher Nolan", </br>
+            "Bio": "Christopher Nolan is a highly acclaimed British-American filmmaker, known for his complex, visually striking, and narrative-driven blockbusters. Born in London on July 30, 1970, he is celebrated for his innovative storytelling techniques and has directed films that have achieved both critical and commercial success", </br>
+            "Birth": "1970" </br>
+          }, </br>
+        "Actors": [], </br>
+        "_id": "689a6e9032c527f294eec4aa", </br>
+        "Title": "The Dark Knight", </br>
+        "Description": "When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness.", </br>
+        "ImagePath": "thedarkknight.png", </br>
+        "Featured": false </br>
+      } </br>
       </td>
     </tr>
-    <!-- GET /movies/genre/:genreName -->
+    <!-- GET data of a genre by its name -->
     <tr>
       <td>Get the description of a genre</td>
-      <td>/movies/genre/{genreName}</td>
+      <td>genre/{genreName}</td>
       <td>GET</td>
-      <td>name</td>
+      <td>genreName</td>
       <td>None</td>
-      <td>A JSON object holding the description of the specified genre</td>
+      <td>A JSON object holding the description of the specified genre. Example: </br>
+        {</br>
+          "Name": "Action",</br>
+          "Description": "The action genre in media, like movies, books, and video games, is characterized by fast-paced, physical conflict and exciting scenarios where protagonists overcome challenges through physical feats, often involving fights, chases, or battles against powerful antagonists."</br>
+        }</br>
+      </td>
     </tr>
-    <!-- GET /movies/directors/:directorName -->
+    <!-- GET data about a director by their name -->
     <tr>
       <td>Get the data of a director</td>
-      <td>/movies/directors/{directorName}</td>
+      <td>/director/{directorsName}</td>
       <td>GET</td>
-      <td>name</td>
+      <td>directorsName</td>
       <td>None</td>
-      <td>A JSON object holding the data of the specified director, containing their name, a brief description, and birth year</td>
+      <td>A JSON object holding the data of the specified director, containing their name, a brief description, and birth year. Example: </br>
+        {</br>
+          "Name": "Christopher Nolan",</br>
+          "Bio": "Christopher Nolan is a highly acclaimed British-American filmmaker, known for his complex, visually striking, and narrative-driven blockbusters. Born in London on July 30, 1970, he is celebrated for his innovative storytelling techniques and has directed films that have achieved both critical and commercial success",</br>
+          "Birth": "1970"</br>
+        }</br>
+      </td>
     </tr>
-    <!-- POST /users -->
+    <!-- CREATE a new user -->
     <tr>
       <td>Create a new user</td>
       <td>/users</td>
       <td>POST</td>
-      <td>username</td>
-      <td>A JSON object with the data of the user to be added, example: </br>
+      <td>None</td>
+      <td>A JSON object with the data of the user to be added. Example: </br>
         {</br>
-          "name": "Joe",</br>
-            "favoriteMovies": ["The Dark Knight"]</br>
+          "Username": "Bryan",</br>
+          "Password": "bryantestpass",</br>
+          "Email": "bryan123123@gmail.com",</br>
+          "Birthday": "2001-11-20"</br>
         }</br>
       </td>
       <td>A JSON object holding the users info that was added including id. Example:</br>
         {</br>
-          "name": "Joe",</br>
-          "favoriteMovies": [</br>
-            "The Dark Knight"</br>
-          ],</br>
-          "id": "2ea60af1-f1a3-4183-bdbc-01a44f73080e"</br>
-}
+          "Username": "Bryan",</br>
+          "Password": "bryantestpass",</br>
+          "Email": "bryan123123@gmail.com",</br>
+          "Birthday": "2001-11-20T00:00:00.000Z",</br>
+          "FavoriteMovies": [],</br>
+          "_id": "689bfb275ac5bff32267fce2",</br>
+          "__v": 0</br>
+        }</br>
       </td>
     </tr>
-    <!-- POST /users/:id/:movieTitle -->
+    <!-- CREATE, add a movie to the users FavoriteMovies list  -->
     <tr>
-      <td>Add a movie to a users favoriteMovies array</td>
-      <td>/users/{id}/{movieTitle}</td>
+      <td>Add a movie to a users FavoriteMovies array</td>
+      <td>/users/{username}/movies/{movieID}</td>
       <td>POST</td>
-      <td>user id, movieTitle</td>
+      <td>username, movieID</td>
       <td>None</td>
-      <td>A message indicating whether the specified movie had been succesfully added to the users favoriteMovies array</td>
+      <td>A message indicating whether the specified movie had been succesfully added to the users FavoriteMovies array.</td>
     </tr>
-    <!-- PUT /users/:id -->
+    <!-- UPDATE a users information -->
     <tr>
-      <td>Update a username</td>
-      <td>/users/{id}</td>
+      <td>Update a users information</td>
+      <td>/users/{username}</td>
       <td>PUT</td>
-      <td>user id</td>
-      <td>None</td>
-      <td>A JSON object holding the updated users information</td>
+      <td>username</td>
+      <td>A JSON object holding the desired information to update. Example:</br>
+        {</br>
+          "Username": "Bryan01",</br>
+          "Password": "bryannewtestpass",</br>
+          "Email": "bryannewemail@gmail.com",</br>
+          "Birthday": "2001-11-20"</br>
+        }</br>
+      </td>
+      <td>A JSON object holding the updated users information. Example: </br>
+        {</br>
+          "Username": "Bryan01",</br>
+          "Password": "bryannewtestpass",</br>
+          "Email": "bryannewemail@gmail.com",</br>
+          "Birthday": "2001-11-20T00:00:00.000Z",</br>
+          "FavoriteMovies": [],</br>
+          "_id": "689bfb275ac5bff32267fce2",</br>
+          "__v": 0</br>
+        }</br>
+      </td>
     </tr>
-    <!-- DELETE /users/:id/:movieTitle -->
+    <!-- DELETE a movie from a users FavoriteMovies list  -->
     <tr>
-      <td>Delete a movie from the users favorite's list</td>
-      <td>/users/{id}/{movieTitle}</td>
+      <td>Delete a movie from the users FavoriteMovies array</td>
+      <td>/users/{username}/movies/{movieID}</td>
       <td>DELETE</td>
-      <td>user id, movieTitle</td>
+      <td>username, movieID</td>
       <td>None</td>
-      <td>A message indicating whether the specified movie had been succesfully removed from the users favoriteMovies array</td>
+      <td>A JSON object holding the users data including the FavoriteMovies array showing that the movie has been successfully removed. Example: </br>
+        {</br>
+          "_id": "689bfd512f184c90d9177a84",</br>
+          "Username": "Bryan01",</br>
+          "Password": "bryannewtestpass",</br>
+          "Email": "bryannewemail@gmail.com",</br>
+          "Birthday": "2001-11-20T00:00:00.000Z",</br>
+          "FavoriteMovies": [],</br>
+          "__v": 0</br>
+        }</br>
+      </td>
     </tr>
-    <!-- DELETE /users/:id -->
+    <!-- DELETE a user by their username -->
     <tr>
-      <td>Delete a user</td>
-      <td>/users/{id}</td>
+      <td>Delete a user by their username</td>
+      <td>/users/{username}</td>
       <td>DELETE</td>
-      <td>user id</td>
+      <td>username</td>
       <td>None</td>
-      <td>A message indicating whether the specified user was sucessfully deleted</td>
+      <td>A message indicating whether the specified user was sucessfully deleted.</td>
     </tr>
     </tbody>
   </table> 

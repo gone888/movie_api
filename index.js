@@ -52,7 +52,7 @@ let auth = require('./auth')(app);
 // });
 
 // atlas database connection
-mongoose.connect(process.env.CONNECTION_URI, { 
+mongoose.connect(process.env.CONNECTION_URI , { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
 });
@@ -123,11 +123,6 @@ app.get('/director/:directorsName', passport.authenticate('jwt', {session: false
 
 // CREATE a new user
 app.post('/users',
-    // Validation logic here for request
-    //you can either use a chain of methods like .not().isEmpty()
-    //which means "opposite of isEmpty" in plain english "is not empty"
-    //or use .isLength({min: 5}) which means
-    //minimum value of 5 characters are only allowed
     [
         check('Username', 'Username is required').isLength({min: 5}),
         check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
@@ -136,7 +131,6 @@ app.post('/users',
     ],
     async (req, res) => {
         
-    // check the validation object for errors
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -152,7 +146,7 @@ app.post('/users',
                 Users
                     .create({
                         Username: req.body.Username,
-                        Password: req.body.Password,
+                        Password: hashedPassword,
                         Email: req.body.Email,
                         Birthday: req.body.Birthday
                     })

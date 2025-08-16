@@ -47,16 +47,16 @@ app.use(cors({
 let auth = require('./auth')(app);
 
 // local database connection
-mongoose.connect('mongodb://localhost:27017/cfDB', { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true 
-});
-
-// atlas database connection
-// mongoose.connect(process.env.CONNECTION_URI , { 
+// mongoose.connect('mongodb://localhost:27017/cfDB', { 
 //     useNewUrlParser: true, 
 //     useUnifiedTopology: true 
 // });
+
+// atlas database connection
+mongoose.connect(process.env.CONNECTION_URI , { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
+});
 
 
 // logging to console using morgan middleware

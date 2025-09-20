@@ -56,9 +56,9 @@ app.use(
 let auth = require("./auth")(app);
 
 // local database connection.
-// mongoose.connect('mongodb://localhost:27017/cfDB', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
+// mongoose.connect("mongodb://localhost:27017/cfDB", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
 // });
 
 // atlas database connection
@@ -108,6 +108,28 @@ app.get(
     await Movies.find({ Title: req.params.Title })
       .then((movie) => {
         res.status(201).json(movie);
+      })
+      .catch((error) => {
+        console.error(error), res.status(500).send("Error: " + error);
+      });
+  }
+);
+
+// GET data about a single user by their username
+app.get(
+  "/user/:username",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    await Users.findOne({ username: req.params.username })
+      .then((user) => {
+        res.status(201).json({
+          user: {
+            username: user.Username,
+            email: user.Email,
+            birthday: user.Birthday,
+            favorites: user.FavoriteMovies,
+          },
+        });
       })
       .catch((error) => {
         console.error(error), res.status(500).send("Error: " + error);

@@ -219,7 +219,7 @@ app.post("/users/:username/movies/:movieID", async (req, res) => {
   await Users.findOneAndUpdate(
     { Username: req.params.username },
     {
-      $push: { FavoriteMovies: { _id: req.params.movieID } },
+      $push: { FavoriteMovies: req.params.movieID },
     },
     { new: true }
   ) // This line makes sure that the updated document is returned

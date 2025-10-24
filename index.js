@@ -126,10 +126,10 @@ app.get(
       .then((user) => {
         res.status(201).json({
           user: {
-            username: user.Username,
-            email: user.Email,
-            birthday: user.Birthday,
-            favorites: user.FavoriteMovies,
+            Username: user.Username,
+            Email: user.Email,
+            Birthday: user.Birthday,
+            Favorites: user.FavoriteMovies,
           },
         });
       })

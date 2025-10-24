@@ -129,7 +129,7 @@ app.get(
             Username: user.Username,
             Email: user.Email,
             Birthday: user.Birthday,
-            Favorites: user.FavoriteMovies,
+            FavoriteMovies: user.FavoriteMovies,
           },
         });
       })

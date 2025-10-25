@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="DELETE/users/%7Busername%7D"><span class="type-signature"></span>DELETE /users/{username}<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Delete a user by their username
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line522">line 522</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query Parametersusername</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatA JSON object holding the desired information to update. Example:None</code></pre>
+
+    <pre class="prettyprint"><code>Response body data formatA message indicating whether the specified user was sucessfully deleted.</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="DELETE/users/%7Busername%7D/movies/%7BmovieID%7D"><span class="type-signature"></span>DELETE /users/{username}/movies/{movieID}<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Delete a movie from the users FavoriteMovies array
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line471">line 471</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query Parametersusername, movieID</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatA JSON object holding the desired information to update. Example:
+  {
+  "Username": "test123",
+  "Password": "test123",
+  "Email": "test123@gmail.com",
+  "Birthday": "2000-01-00"
+  }</code></pre>
+
+    <pre class="prettyprint"><code>Response body data formatA JSON object holding the users data including the FavoriteMovies array showing that the movie has been successfully removed. Example:
+  {
+  "_id": "689bfd512f184c90d9177a84",
+  "Username": "test123new",
+  "Password": "test123new",
+  "Email": "test123new@gmail.com",
+  "Birthday": "2000-00-01T00:00:00.000Z",
+  "FavoriteMovies": [],
+  "__v": 0
+  }</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="GET/director/%7BdirectorsName%7D"><span class="type-signature"></span>GET /director/{directorsName}<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Get the data of a director
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line257">line 257</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query ParametersdirectorsName</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatNone</code></pre>
+
+    <pre class="prettyprint"><code>Response body data format	A JSON object holding the description of the specified genre. Example:
+    A JSON object holding the data of the specified director, containing their name, a brief description, and birth year. Example:
+    {
+    "Name": "Christopher Nolan",
+    "Bio": "Christopher Nolan is a highly acclaimed British-American filmmaker, known for his complex, visually striking, and narrative-driven blockbusters. Born in London on July 30, 1970, he is celebrated for his innovative storytelling techniques and has directed films that have achieved both critical and commercial success",
+    "Birth": "1970"
+    }</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="GET/genre/%7BgenreName%7D"><span class="type-signature"></span>GET /genre/{genreName}<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Get the description of a genre
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line224">line 224</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query ParametersgenreName</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatNone</code></pre>
+
+    <pre class="prettyprint"><code>Response body data format	A JSON object holding the description of the specified genre. Example:
+    {
+    "Name": "Action",
+    "Description": "The action genre in media, like movies, books, and video games, is characterized by fast-paced, physical conflict and exciting scenarios where protagonists overcome challenges through physical feats, often involving fights, chases, or battles against powerful antagonists."
+    }</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="GET/movies"><span class="type-signature"></span>GET /movies<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Get a list of all movies
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line75">line 75</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query ParametersNone</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatNone</code></pre>
+
+    <pre class="prettyprint"><code>Response body data formatA JSON object holding a list of all movies in the database</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="GET/movies/%7BTitle%7D"><span class="type-signature"></span>GET /movies/{Title}<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Get data about a single movie by it's title
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line133">line 133</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query ParametersTitle</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatNone</code></pre>
+
+    <pre class="prettyprint"><code>Response body data formatA JSON object holding the data of the specified movie, containing its title, description, genre, director, imageURL, and if the movie is featured. Example:
+    {
+    "Genre": {
+      "Name": "Action",
+      "Description": "The action genre in media, like movies, books, and video games, is characterized by fast-paced, physical conflict and exciting scenarios where protagonists overcome challenges through physical feats, often involving fights, chases, or battles against powerful antagonists."
+    },
+    "Director": {
+      "Name": "Christopher Nolan",
+      "Bio": "Christopher Nolan is a highly acclaimed British-American filmmaker, known for his complex, visually striking, and narrative-driven blockbusters. Born in London on July 30, 1970, he is celebrated for his innovative storytelling techniques and has directed films that have achieved both critical and commercial success",
+      "Birth": "1970"
+    },
+      "Actors": [],
+      "_id": "689a6e9032c527f294eec4aa",
+      "Title": "The Dark Knight",
+      "Description": "When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness.",
+      "ImagePath": "thedarkknight.png",
+      "Featured": false
+    }</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="GET/users"><span class="type-signature"></span>GET /users<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Get a list of all users
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line104">line 104</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query ParametersNone</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatNone</code></pre>
+
+    <pre class="prettyprint"><code>Response body data formatA JSON object holding a list of all users in the database</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="GET/users/%7Busername%7D"><span class="type-signature"></span>GET /users/{username}<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Get data about a single user by their username
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line179">line 179</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query Parametersusername</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatNone</code></pre>
+
+    <pre class="prettyprint"><code>Response body data formatA JSON object holding the users information. Example:
+  {
+  "Username": "test123",
+  "Password": "test123",
+  "Email": "test123@gmail.com",
+  "Birthday": "2000-01-01T00:00:00.000Z",
+  "FavoriteMovies": [],
+  "_id": "689bfb275ac5bff32267fce2",
+  "__v": 0
+  }</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="POST/login"><span class="type-signature"></span>POST /login<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Login a user
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="auth.js.html">auth.js</a>, <a href="auth.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query ParametersNone</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: None</code></pre>
+
+    <pre class="prettyprint"><code>Request body data format
+  {
+  "Username": "test123",
+  "Password": "test123"
+  }</code></pre>
+
+    <pre class="prettyprint"><code>Response body data formatA JSON object holding the users information. Example:{user:
+{
+  "Username": "test123",
+  "Password": "as98jwafklsd",
+  "Email": "test123@gmail.com",
+  "Birthday": "2000-01-01T00:00:00.000Z",
+  "FavoriteMovies": [],
+  "_id": "689bfb275ac5bff32267fce2",
+  "__v": 0
+  },
+  token: "exampletoken"
+  }</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="POST/users"><span class="type-signature"></span>POST /users<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Create a new user
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line292">line 292</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query ParametersNone</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatA JSON object with the data of the user to be added. Example:
+  {
+  "Username": "test123",
+  "Password": "test123",
+  "Email": "test123@gmail.com",
+  "Birthday": "2001-01-01"
+  }</code></pre>
+
+    <pre class="prettyprint"><code>Response body data format	A JSON object holding the description of the specified genre. Example:
+    A JSON object holding the data of the specified director, containing their name, a brief description, and birth year. Example:
+    {
+    "Name": "Christopher Nolan",
+    "Bio": "Christopher Nolan is a highly acclaimed British-American filmmaker, known for his complex, visually striking, and narrative-driven blockbusters. Born in London on July 30, 1970, he is celebrated for his innovative storytelling techniques and has directed films that have achieved both critical and commercial success",
+    "Birth": "1970"
+    }</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="POST/users/%7Busername%7D/movies/%7BmovieID%7D"><span class="type-signature"></span>POST /users/{username}/movies/{movieID}<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Add a movie to a users FavoriteMovies array
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line365">line 365</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query Parametersusername, movieID</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatNone</code></pre>
+
+    <pre class="prettyprint"><code>Response body data formatA message indicating whether the specified movie had been succesfully added to the users FavoriteMovies array</code></pre>
+
+
+
+        
+            
+<h4 class="name" id="PUT/users/%7Busername%7D"><span class="type-signature"></span>PUT /users/{username}<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Update a users information
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line397">line 397</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>Query Parametersusername</code></pre>
+
+    <pre class="prettyprint"><code>Authentication: Bearer token (JWT)</code></pre>
+
+    <pre class="prettyprint"><code>Request body data formatA JSON object holding the desired information to update. Example:
+  {
+  "Username": "test123",
+  "Password": "test123",
+  "Email": "test123@gmail.com",
+  "Birthday": "2000-01-00"
+  }</code></pre>
+
+    <pre class="prettyprint"><code>Response body data formatA JSON object holding the updated users information. Example:
+  {
+  "Username": "test123new",
+  "Password": "test123new",
+  "Email": "test123new@gmail.com",
+  "Birthday": "2000-00-02T00:00:00.000Z",
+  "FavoriteMovies": [],
+  "_id": "689bfb275ac5bff32267fce2",
+  "__v": 0
+  }</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#DELETE/users/%257Busername%257D">DELETE /users/{username}</a></li><li><a href="global.html#DELETE/users/%257Busername%257D/movies/%257BmovieID%257D">DELETE /users/{username}/movies/{movieID}</a></li><li><a href="global.html#GET/director/%257BdirectorsName%257D">GET /director/{directorsName}</a></li><li><a href="global.html#GET/genre/%257BgenreName%257D">GET /genre/{genreName}</a></li><li><a href="global.html#GET/movies">GET /movies</a></li><li><a href="global.html#GET/movies/%257BTitle%257D">GET /movies/{Title}</a></li><li><a href="global.html#GET/users">GET /users</a></li><li><a href="global.html#GET/users/%257Busername%257D">GET /users/{username}</a></li><li><a href="global.html#POST/login">POST /login</a></li><li><a href="global.html#POST/users">POST /users</a></li><li><a href="global.html#POST/users/%257Busername%257D/movies/%257BmovieID%257D">POST /users/{username}/movies/{movieID}</a></li><li><a href="global.html#PUT/users/%257Busername%257D">PUT /users/{username}</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Sat Oct 25 2025 14:24:35 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

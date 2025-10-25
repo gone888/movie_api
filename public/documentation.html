@@ -85,6 +85,25 @@
       } </br>
       </td>
     </tr>
+    <!-- Get data about a single user by their username -->
+    <tr>
+      <td>Get data about a single user by their username</td>
+      <td>/users/{username}</td>
+      <td>GET</td>
+      <td>username</td>
+      <td>None</td>
+      <td>A JSON object holding the users information. Example:</br>
+          {</br>
+            "Username": "test123",</br>
+            "Password": "test123",</br>
+            "Email": "test123@gmail.com",</br>
+            "Birthday": "2000-01-01T00:00:00.000Z",</br>
+            "FavoriteMovies": [],</br>
+            "_id": "689bfb275ac5bff32267fce2",</br>
+            "__v": 0</br>
+          }</br>
+      </td>
+    </tr>
     <!-- GET data of a genre by its name -->
     <tr>
       <td>Get the description of a genre</td>
@@ -202,6 +221,35 @@
       <td>username</td>
       <td>None</td>
       <td>A message indicating whether the specified user was sucessfully deleted.</td>
+    </tr>
+    <!-- Login a user by their username and password -->
+    <tr>
+      <td>Login a user</td>
+      <td>/login</td>
+      <td>POST</td>
+      <td>None</td>
+      <td>  
+        {</br>
+          "Username": "test123",</br>
+          "Password": "test123"</br>
+        }</br>
+      </td>
+      <td>A JSON object holding the users information. Example:</br>
+        {</br>
+        user: </br>
+          {</br>
+            "Username": "test123",</br>
+            "Password": "as98jwafklsd",</br>
+            "Email": "test123@gmail.com",</br>
+            "Birthday": "2000-01-01T00:00:00.000Z",</br>
+            "FavoriteMovies": [],</br>
+            "_id": "689bfb275ac5bff32267fce2",</br>
+            "__v": 0</br>
+          },</br>
+            token: "exampletoken"</br>
+          }</br>
+        </br>
+      </td>
     </tr>
     </tbody>
   </table> 

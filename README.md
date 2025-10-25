@@ -5,7 +5,7 @@ application will provide users with access to information about different
 movies, directors, and genres. Users can sign up, update their
 personal information, and create a list of their favorite movies.
 
-## Essential Features
+## Key Features
 
 - Return a list of ALL movies to the user
 - Return data (description, genre, director, image URL, whether it’s featured or not) about a
@@ -18,7 +18,7 @@ personal information, and create a list of their favorite movies.
 - Allow users to remove a movie from their list of favorites
 - Allow existing users to deregister
 
-## Technologies used:
+## Technology used
 
 - Javascript
 - Node.js
